@@ -1,0 +1,18 @@
+{
+  "name": "cloudwebapp",
+  "version": "1.0.0",
+  "description": "WT Lab mini project",
+  "main": "game.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tvrsimhan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "mongoose": "^6.1.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

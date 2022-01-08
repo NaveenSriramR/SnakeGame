@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classic Snake Game!</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .flex-container {
+      max-width: 100vp;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .flex-container>div {
+      width: 100vp;
+      height: 100vp;
+      margin: 10px;
+      text-align: center;
+    }
+
+    body {
+      background: grey;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    button {
+      background-image: linear-gradient(to bottom right, grey, white);
+      border: none;
+      color: black;
+      padding: 15px 32px;
+      text-align: center;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 12px;
+    }
+
+    button:hover {
+      background-image: linear-gradient(to bottom left, grey, white);
+    }
+
+    .score {
+      background-image: linear-gradient(to top, grey, white);
+      position: relative;
+      top: 200px;
+      right: 70px;
+      width: fit-content;
+      height: fit-content;
+      align-items: center;
+      text-align: center;
+      border: 2px solid;
+    }
+
+    canvas {
+      /* top: 70px; */
+      border: 2px solid black;
+    }
+  </style>
+ 
+</head>
+
+<body>
+
+  <br>
+  <div class="flex-container">
+    <div class="score">
+      <button type="button" onclick="window.location.href='score.html';" name="Scores"> Scores </button>
+      <h1> The Classic Snake Game </h1>
+      <h3> Score:</h3>
+      <p id="score"> 0 </p>
+      <button type="button" name="start" onclick="start(0)"> Start </button>
+    </div>
+    <div> <canvas width="640px" height="640px" id="game"></canvas>
+      <script src="snake-game.js"> </script>
+    </div>
+  </div>
+</body>
+
+</html>
