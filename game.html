@@ -204,30 +204,45 @@
               var dict = { "player-name": answer, "score": score };
               //console.log(dict);
 
-              // Creating a XHR object
-              let xhr = new XMLHttpRequest();
-              let url = "scoreboard.js";
 
-              // open a connection
-              xhr.open("POST",'/snakeGame', true);
-              console.log(xhr.readyState)
-              // Set the request header i.e. which type of content you are sending
-              xhr.setRequestHeader("Content-Type", "application/json");
+              // et data = { element: "barium" };
 
-              // Create a state change callback
-              xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
+              fetch("/snakeGame", {
+                method: "POST",
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(dict)
+              }).then(( res) => {
+                console.log("Request complete! response:", res);
+              });
 
-                  // Print received data from server
-                  console.log(dict);
-                }
-              };
+  
+
+              // // Creating a XHR object
+              // let xhr = new XMLHttpRequest();
+              // let url = "scoreboard.js";
+
+
+
+              // // open a connection
+              // xhr.open("POST", '/snakeGame', true);
+              // console.log(xhr.readyState)
+              // // Set the request header i.e. which type of content you are sending
+              // xhr.setRequestHeader("Content-Type", "application/json");
+              // var data = JSON.stringify(dict);
+              // console.log("data:", data)
+              // // Sending data with the request
+              // xhr.send(data);
+
+              // // Create a state change callback
+              // xhr.onreadystatechange = function () {
+              //   if (xhr.readyState === 4 && xhr.status === 200) {
+
+              //     // Print received data from server
+              //     // console.log(dict);
+              //   }
+              // };
 
               // Converting JSON data to string
-              var data = JSON.stringify({ "name": answer, "score": score });
-
-              // Sending data with the request
-              xhr.send(data);
               // document.cookie = "name=" + answer;
               // document.cookie = "score=" + score;
               // document.cookie = "play=" + 2;

@@ -4,6 +4,7 @@ var express = require("express");
 // var myParser = require("body-parser");
 var app = express();
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json())
 
 app.get("/", function(req, res){
     // console.log(req.url)
